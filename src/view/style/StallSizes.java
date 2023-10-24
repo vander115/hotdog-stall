@@ -1,4 +1,4 @@
-package constants;
+package view.style;
 
 public class StallSizes {
 

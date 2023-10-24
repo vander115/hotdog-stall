@@ -1,7 +1,7 @@
 package view.windows;
 
-import constants.StallSizes;
-import enums.WindowType;
+import view.style.StallSizes;
+import view.enums.WindowType;
 import view.components.StallButton;
 import view.containers.*;
 import view.style.StallColors;

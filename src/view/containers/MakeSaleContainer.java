@@ -1,6 +1,6 @@
 package view.containers;
 
-import enums.WindowType;
+import view.enums.WindowType;
 import view.components.*;
 import view.style.StallColors;
 
@@ -8,6 +8,16 @@ import javax.swing.*;
 import java.awt.*;
 
 public class MakeSaleContainer extends BaseContainer {
+
+    StallTextInput clientNameInput;
+    StallTextInput clientIdInput;
+    StallSelect cheeseSelect;
+    StallSelect proteinSelect;
+
+    StallCheckBox maioneseCheckbox;
+    StallCheckBox ketchupCheckbox;
+    StallCheckBox ovoCheckbox;
+    StallCheckBox batataPalhaCheckbox;
 
     public MakeSaleContainer() {
         super(WindowType.MAKE_SALE);

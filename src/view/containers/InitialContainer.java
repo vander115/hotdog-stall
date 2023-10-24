@@ -1,6 +1,6 @@
 package view.containers;
 
-import enums.WindowType;
+import view.enums.WindowType;
 
 import javax.swing.*;
 

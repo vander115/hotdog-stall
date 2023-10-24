@@ -1,6 +1,6 @@
 package view.containers;
 
-import constants.StallSizes;
+import view.style.StallSizes;
 import view.style.StallColors;
 
 import javax.swing.*;

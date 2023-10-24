@@ -1,9 +1,9 @@
-package entities;
+package model.entities;
 
-import enums.Cheese;
-import enums.Complement;
-import enums.Drink;
-import enums.Protein;
+import model.enums.Cheese;
+import model.enums.Complement;
+import model.enums.Drink;
+import model.enums.Protein;
 
 import java.util.ArrayList;
 

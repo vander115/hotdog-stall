@@ -5,7 +5,7 @@ import java.io.InputStream;
 
 public class StallFonts {
 
-    private static String rootPath = "/assets/fonts/";
+    private static String rootPath = "/view/assets/fonts/";
 
     public static Font importFont(String fontPath, float fontSize) {
         try {
