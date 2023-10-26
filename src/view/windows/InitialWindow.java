@@ -1,10 +1,11 @@
 package view.windows;
 
-import view.style.StallSizes;
-import view.enums.WindowType;
+import controller.Controller;
 import view.components.StallButton;
 import view.containers.*;
+import view.enums.WindowType;
 import view.style.StallColors;
+import view.style.StallSizes;
 
 import javax.swing.*;
 import java.awt.*;
@@ -18,14 +19,14 @@ public class InitialWindow extends JFrame implements ActionListener {
     @Serial
     private static final long serialVersionUID = 1L;
 
+    Controller controller = new Controller();
 
     StallHeader header = new StallHeader();
-
     JPanel root = new JPanel();
 
     InitialContainer initialContainer = new InitialContainer();
-    MakeSaleContainer makeSaleContainer = new MakeSaleContainer();
-    ListSalesContainer listSalesContainer = new ListSalesContainer();
+    MakeSaleContainer makeSaleContainer = new MakeSaleContainer(controller);
+    ListSalesContainer listSalesContainer = new ListSalesContainer(controller);
     ShowReportContainer showReportContainer = new ShowReportContainer();
     ListClientsContainer listClientsContainer = new ListClientsContainer();
 

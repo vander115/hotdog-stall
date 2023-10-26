@@ -3,9 +3,9 @@ package model.entities;
 public class Client {
 
     String name;
-    int Id;
+    String Id;
 
-    public Client(String name, int Id) {
+    public Client(String name, String Id) {
         this.name = name;
         this.Id = Id;
     }
@@ -14,7 +14,7 @@ public class Client {
         return this.name;
     }
 
-    public int getId() {
+    public String getId() {
         return this.Id;
     }
 

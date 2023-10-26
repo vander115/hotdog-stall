@@ -19,7 +19,7 @@ public class HotDog {
         this.drink = drink;
         this.complements = complements;
     }
-    
+
     public HotDog(Cheese cheese, Protein protein, Drink drink) {
         this.cheese = cheese;
         this.protein = protein;
@@ -34,8 +34,20 @@ public class HotDog {
         return protein;
     }
 
+    public Drink getDrink() {
+        return drink;
+    }
+
     public ArrayList<Complement> getComplements() {
         return complements;
+    }
+
+    public ArrayList<String> getComplementsNames() {
+        ArrayList<String> names = new ArrayList<>();
+        for (Complement complement : complements) {
+            names.add(complement.getName());
+        }
+        return names;
     }
 
 }

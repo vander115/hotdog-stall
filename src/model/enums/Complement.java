@@ -5,7 +5,7 @@ public enum Complement {
     MAYONNAISE("Maionese"),
     KETCHUP("Ketchup"),
     EGG("Ovo"),
-    POTATO_STICK("Batata Palha");
+    SHOESTRING_POTATOES("Batata Palha");
 
     final String name;
 

@@ -12,4 +12,7 @@ public enum Drink {
         this.name = name;
     }
 
+    public String getName() {
+        return this.name;
+    }
 }
