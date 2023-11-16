@@ -1,6 +1,7 @@
 package view.containers;
 
 import model.Model;
+import view.components.table.SaleTableModel;
 import view.enums.WindowType;
 
 import java.awt.Dimension;
@@ -16,7 +17,7 @@ public class ListSalesContainer extends BaseContainer {
     	super(WindowType.LIST_SALES);
         this.model = model;
 
-        StallTableModel tableModel = new StallTableModel(model.getSales());
+        SaleTableModel tableModel = new SaleTableModel(model.getSales());
         JTable tabela = new JTable(tableModel);
 
         JScrollPane scrollPane = new JScrollPane(tabela);

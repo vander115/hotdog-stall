@@ -28,7 +28,7 @@ public class InitialWindow extends JFrame implements ActionListener {
     MakeSaleContainer makeSaleContainer = new MakeSaleContainer(model);
     ListSalesContainer listSalesContainer = new ListSalesContainer(model);
     ShowReportContainer showReportContainer = new ShowReportContainer();
-    ListClientsContainer listClientsContainer = new ListClientsContainer();
+    ListClientsContainer listClientsContainer = new ListClientsContainer(model);
 
     ArrayList<WindowButton> windowButtons = new ArrayList<>();
     ArrayList<BaseContainer> containers = new ArrayList<>();

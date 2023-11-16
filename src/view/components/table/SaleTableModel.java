@@ -1,4 +1,4 @@
-package view.containers;
+package view.components.table;
 
 import controller.entities.HotDog;
 import controller.entities.Sale;
@@ -6,11 +6,11 @@ import controller.entities.Sale;
 import javax.swing.table.AbstractTableModel;
 import java.util.List;
 
-public class StallTableModel extends AbstractTableModel {
+public class SaleTableModel extends AbstractTableModel {
     private final List<Sale> vendas;
     private final String[] colunas = { "Nome C.", "Id C.", "Queijo", "Proteína", "Bebida", "Complementos" };
 
-    public StallTableModel(List<Sale> vendas) {
+    public SaleTableModel(List<Sale> vendas) {
         this.vendas = vendas;
     }
 
