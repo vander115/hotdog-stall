@@ -1,9 +1,9 @@
-package model.entities;
+package controller.entities;
 
-import model.enums.Cheese;
-import model.enums.Complement;
-import model.enums.Drink;
-import model.enums.Protein;
+import controller.enums.Cheese;
+import controller.enums.Complement;
+import controller.enums.Drink;
+import controller.enums.Protein;
 
 import java.util.ArrayList;
 
@@ -38,6 +38,10 @@ public class HotDog {
         return drink;
     }
 
+    public double getPrice() {
+        return protein.getPrice();
+    }
+
     public ArrayList<Complement> getComplements() {
         return complements;
     }
@@ -50,4 +54,14 @@ public class HotDog {
         return names;
     }
 
+    public String getComplementsString() {
+        StringBuilder complementString = new StringBuilder();
+
+        for (Complement complement : complements) {
+            complementString.append(complement.getName());
+            complementString.append("; ");
+        }
+
+        return new String(complementString);
+    }
 }

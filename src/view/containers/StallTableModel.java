@@ -1,14 +1,14 @@
 package view.containers;
 
-import model.entities.HotDog;
-import model.entities.Sale;
+import controller.entities.HotDog;
+import controller.entities.Sale;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.List;
 
 public class StallTableModel extends AbstractTableModel {
     private final List<Sale> vendas;
-    private final String[] colunas = {"Nome C.", "Id C.", "Queijo", "Proteína", "Bebida", "Complementos"};
+    private final String[] colunas = { "Nome C.", "Id C.", "Queijo", "Proteína", "Bebida", "Complementos" };
 
     public StallTableModel(List<Sale> vendas) {
         this.vendas = vendas;

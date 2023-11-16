@@ -2,6 +2,8 @@ package view.components;
 
 import view.style.StallFonts;
 
+import java.awt.Color;
+
 import javax.swing.*;
 
 public class StallButton extends JButton {
@@ -10,7 +12,6 @@ public class StallButton extends JButton {
         super(text);
 
         this.setFont(StallFonts.montserratBold(14));
-
 
     }
 }

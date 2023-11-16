@@ -1,6 +1,6 @@
 package view.windows;
 
-import controller.Controller;
+import model.Model;
 import view.components.StallButton;
 import view.containers.*;
 import view.enums.WindowType;
@@ -19,14 +19,14 @@ public class InitialWindow extends JFrame implements ActionListener {
     @Serial
     private static final long serialVersionUID = 1L;
 
-    Controller controller = new Controller();
+    Model model = new Model();
 
     StallHeader header = new StallHeader();
     JPanel root = new JPanel();
 
     InitialContainer initialContainer = new InitialContainer();
-    MakeSaleContainer makeSaleContainer = new MakeSaleContainer(controller);
-    ListSalesContainer listSalesContainer = new ListSalesContainer(controller);
+    MakeSaleContainer makeSaleContainer = new MakeSaleContainer(model);
+    ListSalesContainer listSalesContainer = new ListSalesContainer(model);
     ShowReportContainer showReportContainer = new ShowReportContainer();
     ListClientsContainer listClientsContainer = new ListClientsContainer();
 
@@ -67,13 +67,13 @@ public class InitialWindow extends JFrame implements ActionListener {
     private void setButtons() {
         WindowButton makeSaleButton = new WindowButton("Realizar Venda", WindowType.MAKE_SALE, this);
         WindowButton listSalesButton = new WindowButton("Listar Vendas", WindowType.LIST_SALES, this);
-        WindowButton ShowReport = new WindowButton("Relatório", WindowType.SHOW_REPORT, this);
+        WindowButton ShowReport = new WindowButton("Mostar Relatório", WindowType.SHOW_REPORT, this);
         WindowButton listClients = new WindowButton("Listar Clientes", WindowType.LIST_CLIENTS, this);
 
         windowButtons.add(makeSaleButton);
         windowButtons.add(listSalesButton);
-        windowButtons.add(ShowReport);
         windowButtons.add(listClients);
+        windowButtons.add(ShowReport);
     }
 
     private void setContainers() {
@@ -84,29 +84,11 @@ public class InitialWindow extends JFrame implements ActionListener {
         containers.add(listClientsContainer);
     }
 
-
     private void removeContent() {
         for (BaseContainer container : containers) {
             root.remove(container);
         }
     }
-
-    private JPanel content() {
-        JPanel content = new JPanel();
-
-        content.setLayout(new BorderLayout());
-        content.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
-        content.setBackground(StallColors.WINDOW_BACKGROUND_COLOR);
-
-        JPanel internalContent = new JPanel();
-        internalContent.setLayout(new BorderLayout());
-        internalContent.setBackground(StallColors.WINDOW_CONTAINERS_COLOR);
-
-        content.add(internalContent, BorderLayout.CENTER);
-
-        return content;
-    }
-
 
     @Override
     public void actionPerformed(ActionEvent e) {

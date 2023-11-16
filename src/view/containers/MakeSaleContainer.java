@@ -1,10 +1,10 @@
 package view.containers;
 
-import controller.Controller;
-import model.enums.Cheese;
-import model.enums.Complement;
-import model.enums.Drink;
-import model.enums.Protein;
+import controller.enums.Cheese;
+import controller.enums.Complement;
+import controller.enums.Drink;
+import controller.enums.Protein;
+import model.Model;
 import view.components.*;
 import view.enums.WindowType;
 import view.style.StallColors;
@@ -19,7 +19,7 @@ public class MakeSaleContainer extends BaseContainer implements ActionListener {
 
     JPanel inputsContent = new JPanel();
 
-    Controller controller = new Controller();
+    Model model = new Model();
 
     StallTextInput clientNameInput = new StallTextInput();
     StallTextInput clientIdInput = new StallTextInput();
@@ -31,10 +31,9 @@ public class MakeSaleContainer extends BaseContainer implements ActionListener {
     StallCheckBox eggCheckbox = new StallCheckBox("Ovo");
     StallCheckBox shoestringPotatoesCheckbox = new StallCheckBox("Batata Palha");
 
-
-    public MakeSaleContainer(Controller controller) {
+    public MakeSaleContainer(Model model) {
         super(WindowType.MAKE_SALE);
-        this.controller = controller;
+        this.model = model;
 
         inputsContent.setLayout(new GridLayout(7, 2, 5, 25));
         inputsContent.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
@@ -123,9 +122,17 @@ public class MakeSaleContainer extends BaseContainer implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String clientName = clientNameInput.getText();
         String clientId = clientIdInput.getText();
+        int intClientId;
 
         if (clientName.isEmpty() || clientId.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Preencha todos os campos!", "Erro", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        try {
+            intClientId = Integer.parseInt(clientId);
+        } catch (NumberFormatException exception) {
+            JOptionPane.showMessageDialog(null, "Número de Identificação inválido!", "Erro", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
@@ -151,9 +158,10 @@ public class MakeSaleContainer extends BaseContainer implements ActionListener {
         }
 
         try {
-            controller.createSale(clientName, clientId, cheese, protein, drink, complements);
+            model.createSale(clientName, intClientId, cheese, protein, drink, complements);
             resetInputs();
-            JOptionPane.showMessageDialog(null, "Venda realizada com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Venda realizada com sucesso!", "Sucesso",
+                    JOptionPane.INFORMATION_MESSAGE);
         } catch (Exception exception) {
             JOptionPane.showMessageDialog(null, exception.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
         }

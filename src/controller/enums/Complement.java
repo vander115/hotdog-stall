@@ -1,4 +1,4 @@
-package model.enums;
+package controller.enums;
 
 public enum Complement {
 

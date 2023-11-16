@@ -1,25 +1,28 @@
 package view.containers;
 
-import controller.Controller;
+import model.Model;
 import view.enums.WindowType;
+
+import java.awt.Dimension;
 
 import javax.swing.*;
 
 public class ListSalesContainer extends BaseContainer {
 
-    Controller controller;
+    Model model;
 
+    public ListSalesContainer(Model model) {
 
-    public ListSalesContainer(Controller controller) {
+    	super(WindowType.LIST_SALES);
+        this.model = model;
 
-        super(WindowType.LIST_SALES);
-        this.controller = controller;
-
-        StallTableModel tableModel = new StallTableModel(controller.getSales());
-
+        StallTableModel tableModel = new StallTableModel(model.getSales());
         JTable tabela = new JTable(tableModel);
 
-        this.getContent().add(tabela);
+        JScrollPane scrollPane = new JScrollPane(tabela);
+        scrollPane.setPreferredSize(new Dimension(600, 400)); // Ajuste as dimensões conforme necessário
+
+        this.getContent().add(scrollPane);
     }
 
 }
