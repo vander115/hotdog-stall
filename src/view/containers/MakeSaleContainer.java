@@ -25,6 +25,7 @@ public class MakeSaleContainer extends BaseContainer implements ActionListener {
     StallTextInput clientIdInput = new StallTextInput();
     StallSelect cheeseSelect;
     StallSelect proteinSelect;
+    StallSelect drinkSelect;
 
     StallCheckBox mayonnaiseCheckbox = new StallCheckBox("Maionese");
     StallCheckBox ketchupCheckbox = new StallCheckBox("Ketchup");
@@ -87,7 +88,7 @@ public class MakeSaleContainer extends BaseContainer implements ActionListener {
         for (int i = 0; i < drinks.length; i++) {
             drinkNames[i] = drinks[i].getName();
         }
-        StallSelect drinkSelect = new StallSelect(drinkNames);
+        drinkSelect = new StallSelect(drinkNames);
         inputsContent.add(drinkSelect);
     }
 
@@ -140,7 +141,7 @@ public class MakeSaleContainer extends BaseContainer implements ActionListener {
 
         Protein protein = Protein.values()[proteinSelect.getSelectedIndex()];
 
-        Drink drink = Drink.values()[proteinSelect.getSelectedIndex()];
+        Drink drink = Drink.values()[drinkSelect.getSelectedIndex()];
 
         ArrayList<Complement> complements = new ArrayList<>();
 

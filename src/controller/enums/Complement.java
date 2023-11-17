@@ -17,4 +17,13 @@ public enum Complement {
         return this.name;
     }
 
+    public static Complement convertValueToEnum(String value) {
+        for (Complement complement : Complement.values()) {
+            if (complement.getName().equalsIgnoreCase(value)) {
+                return complement;
+            }
+        }
+        throw new IllegalArgumentException("Nenhum enum encontrado para o valor: " + value);
+    }
+
 }

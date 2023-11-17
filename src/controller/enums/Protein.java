@@ -28,4 +28,12 @@ public enum Protein {
         return this.index;
     }
 
+    public static Protein convertValueToEnum(String value) {
+        for (Protein protein : Protein.values()) {
+            if (protein.getName().equalsIgnoreCase(value)) {
+                return protein;
+            }
+        }
+        throw new IllegalArgumentException("Nenhum enum encontrado para o valor: " + value);
+    }
 }

@@ -27,7 +27,7 @@ public class InitialWindow extends JFrame implements ActionListener {
     InitialContainer initialContainer = new InitialContainer();
     MakeSaleContainer makeSaleContainer = new MakeSaleContainer(model);
     ListSalesContainer listSalesContainer = new ListSalesContainer(model);
-    ShowReportContainer showReportContainer = new ShowReportContainer();
+    ShowReportContainer showReportContainer = new ShowReportContainer(model);
     ListClientsContainer listClientsContainer = new ListClientsContainer(model);
 
     ArrayList<WindowButton> windowButtons = new ArrayList<>();
@@ -97,6 +97,8 @@ public class InitialWindow extends JFrame implements ActionListener {
             if (e.getSource().equals(button)) {
                 for (BaseContainer container : containers) {
                     if (container.getType().equals(button.getWindowType())) {
+                        container.revalidate();
+                        container.repaint();
                         root.add(container, BorderLayout.CENTER);
                     }
                 }

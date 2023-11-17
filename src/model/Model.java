@@ -9,13 +9,23 @@ import controller.enums.Drink;
 import controller.enums.Protein;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Model {
 
-    private final ArrayList<Sale> sales;
+    private ArrayList<Sale> sales;
+    private final FileManager fileManager;
 
     public Model() {
         sales = new ArrayList<>();
+        this.fileManager = new FileManager("src/data/sales.txt");
+        try {
+            sales = fileManager.getSalesFromFile();
+            System.out.println("Vendas carregadas com sucesso!");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void addSale(Sale sale) {
@@ -61,28 +71,66 @@ public class Model {
 
         sales.add(newSale);
 
+        fileManager.convertSalesToString(sales);
     }
 
-    public void showSales() {
+    public int getTotalOfHotDogs() {
+        int total = 0;
         for (Sale sale : sales) {
-            System.out.println("Cliente: " + sale.getClient().getName());
-            System.out.println("ID: " + sale.getClient().getId());
+            total += sale.getHotDogs().size();
+        }
+        return total;
+    }
 
+    public int getTotalOfSales() {
+        return sales.size();
+    }
+
+    public Drink getBestSellingDrink() {
+        Map<Drink, Integer> drinkCountMap = new HashMap<>();
+
+        for (Sale sale : sales) {
             for (HotDog hotDog : sale.getHotDogs()) {
-                System.out.println("Queijo: " + hotDog.getCheese().getName());
-                System.out.println("Proteína: " + hotDog.getProtein().getName());
-                System.out.println("Bebida: " + hotDog.getDrink().getName());
 
-                if (hotDog.getComplements().isEmpty()) {
-                    System.out.println("Sem complementos");
-                } else {
-                    System.out.println("Complementos:");
-                    for (Complement complement : hotDog.getComplements()) {
-                        System.out.println(complement.getName());
-                    }
-                }
+                Drink drink = hotDog.getDrink();
+                drinkCountMap.put(drink, drinkCountMap.getOrDefault(drink, 0) + 1);
             }
         }
+
+        Drink bestSellingDrink = null;
+        int maxCount = 0;
+
+        for (Map.Entry<Drink, Integer> entry : drinkCountMap.entrySet()) {
+            if (entry.getValue() > maxCount) {
+                maxCount = entry.getValue();
+                bestSellingDrink = entry.getKey();
+            }
+        }
+
+        return bestSellingDrink;
     }
 
+    public Protein getBestSellingProtein() {
+        Map<Protein, Integer> proteinCountMap = new HashMap<>();
+
+        for (Sale sale : sales) {
+            for (HotDog hotDog : sale.getHotDogs()) {
+
+                Protein protein = hotDog.getProtein();
+                proteinCountMap.put(protein, proteinCountMap.getOrDefault(protein, 0) + 1);
+            }
+        }
+
+        Protein bestSellingProtein = null;
+        int maxCount = 0;
+
+        for (Map.Entry<Protein, Integer> entry : proteinCountMap.entrySet()) {
+            if (entry.getValue() > maxCount) {
+                maxCount = entry.getValue();
+                bestSellingProtein = entry.getKey();
+            }
+        }
+
+        return bestSellingProtein;
+    }
 }

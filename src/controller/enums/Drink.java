@@ -21,4 +21,13 @@ public enum Drink {
     public int getIndex() {
         return this.index;
     }
+
+    public static Drink convertValueToEnum(String value) {
+        for (Drink drink : Drink.values()) {
+            if (drink.getName().equalsIgnoreCase(value)) {
+                return drink;
+            }
+        }
+        throw new IllegalArgumentException("Nenhum enum encontrado para o valor: " + value);
+    }
 }

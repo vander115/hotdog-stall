@@ -23,4 +23,13 @@ public enum Cheese {
         return this.index;
     }
 
+    public static Cheese convertValueToEnum(String value) {
+        for (Cheese cheese : Cheese.values()) {
+            if (cheese.getName().equalsIgnoreCase(value)) {
+                return cheese;
+            }
+        }
+        throw new IllegalArgumentException("Nenhum enum encontrado para o valor: " + value);
+    }
+
 }
