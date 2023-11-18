@@ -26,3 +26,7 @@ Client: vander, ID: 203948
 Client: , ID: 331100
 	Cheese: Mussarela, Protein: Salsicha, Drink: Coca-Cola, Complements: Maionese, Ketchup, Ovo, Batata Palha
 
+Client: 1, ID: 1
+	Cheese: Mussarela, Protein: Salsicha, Drink: Coca-Cola, Complements: Maionese, Ketchup, Ovo, Batata Palha
+	Cheese: Mussarela, Protein: Salsicha, Drink: Coca-Cola, Complements: Maionese, Ketchup, Ovo, Batata Palha
+

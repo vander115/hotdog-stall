@@ -5,9 +5,9 @@ public class Client {
     String name;
     int id;
 
-    public Client(String name, int Id) {
+    public Client(String name, int id) {
         this.name = name;
-        this.id = Id;
+        this.id = id;
     }
 
     public String getName() {

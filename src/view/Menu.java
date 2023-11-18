@@ -33,18 +33,17 @@ public class Menu {
       option = scanner.nextInt();
 
       if (option == 1) {
-        createSale();
+        createSaleOptions();
       }
 
       if (option < 1 || option > 3) {
         System.out.println("Opção inválida, tente novamente");
       }
-      scanner.close();
     } while (option != 3);
 
   }
 
-  public void createSale() {
+  public void createSaleOptions() {
 
     Scanner createSaleScanner = new Scanner(System.in);
 
@@ -77,8 +76,6 @@ public class Menu {
     } catch (Exception e) {
       System.out.println("Erro ao realizar venda");
     }
-
-    createSaleScanner.close();
   }
 
   public Protein chooseProtein() {
@@ -93,7 +90,6 @@ public class Menu {
 
       proteinOption = scanner.nextInt();
     } while (proteinOption < 1 || proteinOption > Protein.values().length);
-    scanner.close();
     return Protein.values()[proteinOption - 1];
   }
 
@@ -126,7 +122,6 @@ public class Menu {
 
       option = scanner.nextInt();
     } while (option < 1 || option > Drink.values().length);
-    scanner.close();
     return Drink.values()[option - 1];
   }
 
@@ -154,7 +149,6 @@ public class Menu {
       }
     }
 
-    scanner.close();
     return complements;
   }
 
@@ -177,5 +171,18 @@ public class Menu {
       System.out.println();
     }
     System.out.println();
+  }
+
+  public void showOthersOptionsMenu() {
+    Scanner scanner = new Scanner(System.in);
+    int option;
+
+
+    do {
+      System.out.println("O que você deseja vizualizar?");
+      System.out.println("1 - Total de Cachorros Quentes Vendidos");
+      System.out.println("2 - Cachorro Quente mais vendido por Proteina");
+      System.out.println("3 - Bebida mais vendida");
+    } while ();
   }
 }
