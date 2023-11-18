@@ -11,11 +11,6 @@ public class ModelConnection {
     private String database;
 
     public ModelConnection() {
-        // this.hostname = "localhost";
-        // this.username = "root";
-        // this.password = "";
-        // this.database = "db_test_hot_dogs";
-
         this.hostname = "test_db.mysql.dbaas.com.br";
         this.username = "test_db";
         this.password = "TecProg23-2!@";
