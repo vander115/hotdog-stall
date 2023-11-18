@@ -6,4 +6,23 @@ Client: Vanderlei, ID: 364758
 
 Client: Furtuna, ID: 334455
 	Cheese: Parmesão, Protein: Frango, Drink: Coca-Cola, Complements: Ketchup, Ovo, Batata Palha
+	Cheese: Coalho, Protein: Salsicha, Drink: Suco do Chaves, Complements: Ketchup, Ovo
+	Cheese: Prato, Protein: Salsicha, Drink: Suco do Chaves, Complements: 
+	Cheese: Mussarela, Protein: Salsicha, Drink: Coca-Cola, Complements: Maionese, Ketchup, Ovo, Batata Palha
+	Cheese: Prato, Protein: Salsicha, Drink: Suco do Chaves, Complements: Maionese, Ketchup, Ovo, Batata Palha
+
+Client: vander, ID: 333333
+	Cheese: Prato, Protein: Salsicha, Drink: Suco do Chaves, Complements: Maionese, Ketchup, Ovo, Batata Palha
+
+Client: vander, ID: 223344
+	Cheese: Prato, Protein: Salsicha, Drink: Suco do Chaves, Complements: Maionese, Ketchup, Ovo, Batata Palha
+
+Client: liberato, ID: 787878
+	Cheese: Parmesão, Protein: Linguiça, Drink: Del Rio, Complements: Maionese, Ketchup, Ovo, Batata Palha
+
+Client: vander, ID: 203948
+	Cheese: Prato, Protein: Salsicha, Drink: Suco do Chaves, Complements: 
+
+Client: , ID: 331100
+	Cheese: Mussarela, Protein: Salsicha, Drink: Coca-Cola, Complements: Maionese, Ketchup, Ovo, Batata Palha
 

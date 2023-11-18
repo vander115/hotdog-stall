@@ -1,7 +1,7 @@
-import view.windows.InitialWindow;
+import view.Menu;
 
 public class Main {
-    public static void main(String[] args) {
-      new InitialWindow();
-    }
+  public static void main(String[] args) {
+    new Menu();
+  }
 }

@@ -49,7 +49,7 @@ public class Model {
     }
 
     // 2+2 = 3
-    public void createSale(String name, int id, Cheese cheese, Protein protein, Drink drink,
+    public Sale createSale(String name, int id, Cheese cheese, Protein protein, Drink drink,
             ArrayList<Complement> complements) {
 
         HotDog hotDog = createHotDog(cheese, protein, drink, complements);
@@ -60,18 +60,19 @@ public class Model {
 
         Sale newSale = new Sale(client, hotDogs);
 
-        newSale.insertSale(newSale);
-
         for (Sale sale : sales) {
             if (sale.getClient().getId() == id) {
                 sale.getHotDogs().add(hotDog);
-                return;
+                fileManager.convertSalesToString(sales);
+                return sale;
             }
         }
 
         sales.add(newSale);
 
         fileManager.convertSalesToString(sales);
+
+        return newSale;
     }
 
     public int getTotalOfHotDogs() {
